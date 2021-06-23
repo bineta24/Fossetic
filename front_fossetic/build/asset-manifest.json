@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5698431d.chunk.css",
+    "main.js": "/static/js/main.07aef4ee.chunk.js",
+    "main.js.map": "/static/js/main.07aef4ee.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.60059a25.js",
+    "runtime-main.js.map": "/static/js/runtime-main.60059a25.js.map",
+    "static/js/2.55e6d5bf.chunk.js": "/static/js/2.55e6d5bf.chunk.js",
+    "static/js/2.55e6d5bf.chunk.js.map": "/static/js/2.55e6d5bf.chunk.js.map",
+    "static/js/3.f34c908d.chunk.js": "/static/js/3.f34c908d.chunk.js",
+    "static/js/3.f34c908d.chunk.js.map": "/static/js/3.f34c908d.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.5698431d.chunk.css.map": "/static/css/main.5698431d.chunk.css.map",
+    "static/js/2.55e6d5bf.chunk.js.LICENSE.txt": "/static/js/2.55e6d5bf.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/static/media/pct.eaa84987.eot",
+    "static/media/fossetic.200801cb.png": "/static/media/fossetic.200801cb.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.60059a25.js",
+    "static/js/2.55e6d5bf.chunk.js",
+    "static/css/main.5698431d.chunk.css",
+    "static/js/main.07aef4ee.chunk.js"
+  ]
+}

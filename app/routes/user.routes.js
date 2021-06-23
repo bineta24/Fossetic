@@ -19,6 +19,7 @@ module.exports = function(app) {
     [authJwt.verifyToken, authJwt.isClient],
     controller.clientBoard
   );
+    
 
   app.get(
     "/api/test/admin",

@@ -16,10 +16,10 @@ password: { type: String, required: true },
         ref: "Role"
       }
     ],
-    fosses: [
+    clients: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Fosse"
+        ref: "Client"
       }
     ]
   })

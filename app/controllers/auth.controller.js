@@ -3,6 +3,7 @@ const db = require("../models");
 const User = db.user;
 const Role = db.role;
 
+
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
@@ -40,7 +41,7 @@ exports.signup = (req, res) => {
               return;
             }
 
-            res.send({ message: "User was registered successfully!" });
+            res.send({ message: "L'utilisateur a été enregistré avec succès!!" });
           });
         }
       );
@@ -58,7 +59,7 @@ exports.signup = (req, res) => {
             return;
           }
 
-          res.send({ message: "User was registered successfully!" });
+          res.send({ message: "L'utilisateur a été enregistré avec succès!!" });
         });
       });
     }
@@ -77,7 +78,7 @@ exports.signin = (req, res) => {
       }
 
       if (!user) {
-        return res.status(404).send({ message: "User Not found." });
+        return res.status(404).send({ message: "Utilisateur non trouvé." });
       }
 
       var passwordIsValid = bcrypt.compareSync(
@@ -88,7 +89,7 @@ exports.signin = (req, res) => {
       if (!passwordIsValid) {
         return res.status(401).send({
           accessToken: null,
-          message: "Invalid Password!"
+          message: "Mot de passe incorrect!"
         });
       }
 
@@ -151,7 +152,7 @@ exports.getOneUser = (req, res, next) => {
   exports.modifyUser= ('/:id', async (req, res) => {
     try {
     const user = await User.findByIdAndUpdate(req.params.id, req.body);
-    if(!user) throw Error('Something went wrong while updating the post');
+    if(!user) throw Error("Une erreur s'est produite lors de la mise à jour ");
     res.status(200).json({success: true});
     }catch(err) {
     res.status(400).json({msg:err});
@@ -191,7 +192,7 @@ exports.deleteUser = (req, res, next) => {
         });
       } else {
         res.send({
-          message: "User was deleted successfully!"
+          message: "L'utilisateur a été supprimé avec succès!"
         });
       }
     })

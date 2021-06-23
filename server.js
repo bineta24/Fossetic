@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const dbConfig = require("./app/config/db.config");
+const path = require('path')
 
 const app = express();
 
@@ -9,14 +10,18 @@ var corsOptions = {
   origin: "http://localhost:8081"
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
+app.use(express.static('front_fossetic/build'))
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/*', (_ , res) => {
+  res.sendFile(path.join(__dirname, './front_fossetic/build/index.html'))
+})
 const db = require("./app/models");
 const Role = db.role;
 
@@ -43,6 +48,7 @@ app.get("/", (req, res) => {
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
 require("./app/routes/fosse.routes")(app);
+require("./app/routes/client")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
@@ -72,6 +78,8 @@ function initial() {
 
         console.log("added 'client' to roles collection");
       });
+
+    
 
       new Role({
         name: "admin"

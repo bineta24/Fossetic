@@ -12,7 +12,7 @@ verifyToken = (req, res, next) => {
   }
 
   jwt.verify(token, config.secret, (err, decoded) => {
-    if (err) {
+    if (err) { 
       return res.status(401).send({ message: "Unauthorized!" });
     }
     req.userId = decoded.id;
@@ -50,7 +50,6 @@ isAdmin = (req, res, next) => {
     );
   });
 };
-
 isClient = (req, res, next) => {
   User.findById(req.userId).exec((err, user) => {
     if (err) {
@@ -69,22 +68,24 @@ isClient = (req, res, next) => {
         }
 
         for (let i = 0; i < roles.length; i++) {
-          if (roles[i].name === "client") {
+          if (roles[i].name === "admin") {
             next();
             return;
           }
         }
 
-        res.status(403).send({ message: "Require Client Role!" });
+        res.status(403).send({ message: "Require Admin Role!" });
         return;
       }
     );
   });
 };
 
+
 const authJwt = {
   verifyToken,
   isAdmin,
   isClient
+
 };
 module.exports = authJwt;
