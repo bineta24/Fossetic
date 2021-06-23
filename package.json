@@ -3,14 +3,21 @@
   "version": "1.0.0",
   "description": "Node.js + MongoDB: JWT Authentication & Authorization",
   "main": "server.js",
-  "scripts": {
+  "scripts": { 
     "start": "node server.js",
     "watch": "nodemon server.js",
     "front_fossetic": "cd front_fossetic && npm start",
+    "heroku-postbuild": "npm run install-front_fossetic && npm run build",
+    "install-front_fossetic": "cd  front_fossetic && npm install",
     "build": "cd front_fossetic && npm run build"
 
 
   },
+  "engines":{
+"node": "16.x"
+
+  },
+
   "keywords": [
     "node.js",
     "express",
